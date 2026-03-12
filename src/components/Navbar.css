@@ -1,0 +1,177 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: var(--transition-smooth);
+  padding: 1.5rem 0;
+  background-color: transparent;
+}
+
+.navbar.scrolled {
+  background-color: #F5F1EC; /* solid soft beige */
+  padding: 1rem 0;
+  box-shadow: var(--shadow-sm);
+  border-bottom: 1px solid rgba(198, 142, 59, 0.2); /* amber gold border */
+}
+
+/* Ensure navbar items are visible on light backgrounds */
+.navbar.scrolled .navbar-logo a,
+.navbar.scrolled .navbar-links a,
+.navbar.scrolled .icon-btn,
+.navbar.menu-open .navbar-logo a,
+.navbar.menu-open .icon-btn {
+  color: var(--deep-maroon);
+}
+
+.navbar-logo a {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--ivory);
+  transition: var(--transition-smooth);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.navbar-links a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ivory);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition-fast);
+  position: relative;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--amber-gold);
+  transition: var(--transition-fast);
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+.navbar-icons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.icon-btn {
+  color: var(--ivory);
+  display: flex;
+  align-items: center;
+  transition: var(--transition-fast);
+  position: relative;
+}
+
+.icon-btn:hover {
+  color: var(--amber-gold) !important;
+}
+
+.cart-btn .cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background-color: var(--amber-gold);
+  color: var(--ivory);
+  font-size: 0.7rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.mobile-menu-btn {
+  display: none;
+  color: var(--ivory);
+  z-index: 1001;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar.scrolled .mobile-menu-btn {
+  color: var(--deep-maroon);
+}
+
+/* Responsive Navbar */
+@media (max-width: 992px) {
+  .navbar-links {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .navbar-logo a {
+    font-size: 1.4rem;
+  }
+
+  /* Make sure the menu button changes color when menu is open because the background is cream */
+  .navbar-links.open ~ .mobile-menu-btn,
+  .mobile-menu-btn.open {
+    color: var(--deep-maroon);
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--cream);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transform: translateY(-100%);
+    transition: var(--transition-smooth);
+    opacity: 0;
+    z-index: 999; /* Below the navbar container to keep logo and button visible */
+  }
+
+  .navbar-links.open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .navbar-links a {
+    color: var(--deep-maroon);
+    font-size: 1.5rem;
+  }
+
+  .navbar-icons {
+    gap: 1rem;
+  }
+}
