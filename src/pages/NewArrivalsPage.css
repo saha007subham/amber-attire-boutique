@@ -1,0 +1,78 @@
+.new-arrivals-page {
+  padding-top: 80px; /* Account for navbar */
+  min-height: 100vh;
+  background-color: var(--ivory);
+}
+
+.new-arrivals-header {
+  background-color: rgb(246, 241, 236);
+  padding: 80px 20px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-subtitle-page {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.9rem;
+  color: var(--amber-gold);
+  display: block;
+  margin-bottom: 15px;
+}
+
+.page-title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  color: var(--deep-maroon);
+  margin-bottom: 20px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.page-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.products-container {
+  padding-bottom: 100px;
+}
+
+/* Reusing grid styles from ShopCollection.css */
+.product-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+@media (max-width: 1200px) {
+  .product-grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .product-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .page-title {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-grid-4 {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .new-arrivals-header {
+    padding: 50px 20px;
+  }
+}

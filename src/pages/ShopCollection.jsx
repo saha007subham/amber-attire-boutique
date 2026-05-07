@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Heart, Eye, Filter, ChevronDown, CheckCircle, Truck, RefreshCw, ShieldCheck, Banknote, ShoppingBag, X } from 'lucide-react';
 import './ShopCollection.css';
 import '../components/QuickView.css';
@@ -203,6 +203,18 @@ const ShopCollection = ({ addToCart, addToWishlist, wishlistItems = [] }) => {
   const [selectedColor, setSelectedColor] = useState(null);
   const [quickViewProduct, setQuickViewProduct] = useState(null);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+  const searchParams = new URLSearchParams(location.search);
+  const searchQuery = searchParams.get('search') || '';
+
+  const checkSearchQuery = (product) => {
+    if (!searchQuery) return true;
+    const lowerQuery = searchQuery.toLowerCase();
+    return product.name.toLowerCase().includes(lowerQuery) || 
+           (product.category && product.category.toLowerCase().includes(lowerQuery));
+  };
+
   const openQuickView = (product) => {
     setQuickViewProduct(product);
     document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
@@ -326,7 +338,7 @@ const ShopCollection = ({ addToCart, addToWishlist, wishlistItems = [] }) => {
         <div className="container">
           {/* Dynamically Ordered and Filtered Collections */}
           {orderedSections.every(section =>
-            section.data.filter(product => checkPriceRange(product.price, selectedPriceRange) && checkColor(product.name, selectedColor)).length === 0
+            section.data.filter(product => checkPriceRange(product.price, selectedPriceRange) && checkColor(product.name, selectedColor) && checkSearchQuery(product)).length === 0
           ) ? (
             <div className="empty-state" style={{ textAlign: 'center', padding: '4rem 0' }}>
               <div style={{ fontSize: '3rem', marginBottom: '1rem', color: '#c68e3b' }}>Oops</div>
@@ -338,6 +350,7 @@ const ShopCollection = ({ addToCart, addToWishlist, wishlistItems = [] }) => {
                   setSelectedColor(null);
                   setSelectedPriceRange(null);
                   setSelectedCategory(null);
+                  if (searchQuery) navigate('/shop');
                 }}
               >
                 Clear All Filters
@@ -345,7 +358,7 @@ const ShopCollection = ({ addToCart, addToWishlist, wishlistItems = [] }) => {
             </div>
           ) : (
             orderedSections.map((section, index) => {
-              const filteredData = section.data.filter(product => checkPriceRange(product.price, selectedPriceRange) && checkColor(product.name, selectedColor));
+              const filteredData = section.data.filter(product => checkPriceRange(product.price, selectedPriceRange) && checkColor(product.name, selectedColor) && checkSearchQuery(product));
 
               // Skip rendering the section entirely if no products match the price filter
               if (filteredData.length === 0) return null;

@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import ShopCollection from './pages/ShopCollection';
 import Checkout from './pages/Checkout';
 import Footer from './components/Footer';
+import OurStory from './pages/OurStory';
 import CartSidebar from './components/CartSidebar';
 import WishlistSidebar from './components/WishlistSidebar';
 import './App.css';
@@ -96,6 +97,7 @@ function App() {
           <Route path="/" element={<Home addToCart={addToCart} addToWishlist={addToWishlist} wishlistItems={wishlistItems} />} />
           <Route path="/shop" element={<ShopCollection addToCart={addToCart} addToWishlist={addToWishlist} wishlistItems={wishlistItems} />} />
           <Route path="/checkout" element={<Checkout cartItems={cartItems} clearCart={clearCart} />} />
+          <Route path="/our-story" element={<OurStory />} />
         </Routes>
 
         <Footer />

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { ShoppingBag, Search, Menu, X, Heart } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import SearchModal from './SearchModal';
 import './Navbar.css';
 
 const Navbar = ({ toggleCart, cartCount = 0, toggleWishlist, wishlistCount = 0 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const location = useLocation();
 
   const isHomePage = location.pathname === '/';
@@ -39,14 +41,13 @@ const Navbar = ({ toggleCart, cartCount = 0, toggleWishlist, wishlistCount = 0 }
         {/* Desktop Navigation Links */}
         <ul className={`navbar-links ${isMobileMenuOpen ? 'open' : ''}`}>
           <li><Link to="/shop" onClick={() => setIsMobileMenuOpen(false)}>Shop Collection</Link></li>
-          <li><a href="/#collections" onClick={() => setIsMobileMenuOpen(false)}>Collections</a></li>
           <li><a href="/#new-arrivals" onClick={() => setIsMobileMenuOpen(false)}>New Arrivals</a></li>
-          <li><a href="/#about" onClick={() => setIsMobileMenuOpen(false)}>Our Story</a></li>
+          <li><Link to="/our-story" onClick={() => setIsMobileMenuOpen(false)}>Our Story</Link></li>
         </ul>
 
         {/* Icons */}
         <div className="navbar-icons">
-          <button className="icon-btn search-btn" aria-label="Search">
+          <button className="icon-btn search-btn" aria-label="Search" onClick={() => setIsSearchOpen(true)}>
             <Search size={22} />
           </button>
           <button className="icon-btn wishlist-btn" onClick={toggleWishlist} aria-label="Wishlist">
@@ -59,6 +60,7 @@ const Navbar = ({ toggleCart, cartCount = 0, toggleWishlist, wishlistCount = 0 }
           </button>
         </div>
       </div>
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </nav>
   );
 };

@@ -65,14 +65,14 @@ const Footer = () => {
               </li>
               <li>
                 <Phone size={18} />
-                <span>+91 62900 96893</span>
+                <span>+91 7003948169</span>
               </li>
               <li>
                 <Mail size={18} />
                 <span>support@amberattiire.com</span>
               </li>
             </ul>
-            <a href="https://wa.me/916290096893" className="whatsapp-btn" target="_blank" rel="noreferrer">
+            <a href="https://wa.me/917003948169" className="whatsapp-btn" target="_blank" rel="noreferrer">
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 width="20" 
