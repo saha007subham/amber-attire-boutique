@@ -286,6 +286,22 @@ const ShopCollection = ({ addToCart, addToWishlist, wishlistItems = [] }) => {
       {/* Filter & Sorting Section */}
       <div className="shop-controls-wrapper">
         <div className="container">
+          {searchQuery && (
+            <div className="search-active-banner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', padding: '1rem 1.5rem', backgroundColor: '#f9f9f9', borderRadius: '8px', border: '1px solid #eaeaea' }}>
+              <span style={{ fontSize: '1.1rem', color: '#333' }}>
+                Search results for: <strong style={{ color: '#c68e3b', fontWeight: '600' }}>"{searchQuery}"</strong>
+              </span>
+              <button 
+                onClick={() => navigate('/shop')}
+                style={{ background: 'none', border: 'none', color: '#666', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', fontWeight: '500', padding: '0.5rem 1rem', borderRadius: '4px', transition: 'all 0.2s' }}
+                onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#eee'; e.currentTarget.style.color = '#333'; }}
+                onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = '#666'; }}
+                aria-label="Clear Search"
+              >
+                <X size={16} /> Clear Search
+              </button>
+            </div>
+          )}
           <div className="shop-controls">
             <div className="filter-bar">
               <div className="filter-dropdown category-dropdown">
