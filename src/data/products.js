@@ -41,6 +41,20 @@ export const MOCK_PRODUCTS = [
     image: "/images/festive-wear.png",
     badge: "BESTSELLER",
   },
+  {
+    id: 7,
+    name: "Maroon Banarasi Silk",
+    price: 2050,
+    image: "/images/maroon-saree.jpeg",
+    badge: "",
+  },
+  {
+    id: 8,
+    name: "Pathani Saree",
+    price: 2300,
+    image: "/images/pathani-saree.jpeg",
+    badge: "BESTSELLER",
+  },
   // {
   //   id: 7,
   //   name: "Crimson Red Bridal Saree",
