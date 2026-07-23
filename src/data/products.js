@@ -32,7 +32,7 @@ export const MOCK_PRODUCTS = [
     name: "Midnight Blue Silk Handloom",
     price: 14200,
     image: "/images/silk-sarees.png",
-    badge: "NEW",
+    badge: "New Arrival",
   },
   {
     id: 6,
@@ -55,20 +55,34 @@ export const MOCK_PRODUCTS = [
     image: "/images/pathani-saree.jpeg",
     badge: "BESTSELLER",
   },
-  // {
-  //   id: 7,
-  //   name: "Crimson Red Bridal Saree",
-  //   price: 24500,
-  //   image: "/images/wedding-collection.png",
-  //   badge: "LIMITED",
-  // },
-  // {
-  //   id: 8,
-  //   name: "Pastel Pink Party Wear Geo",
-  //   price: 7800,
-  //   image: "/images/party-wear.png",
-  //   badge: "",
-  // },
+  {
+    id: 9,
+    name: "Narayanpet Saree",
+    price: 1850,
+    image: "/images/narayanpet.jpeg",
+    badge: "New Arrival",
+  },
+  {
+    id: 10,
+    name: "Cotton Handloom Saree",
+    price: 1450,
+    image: "/images/cotton-handloom.jpeg",
+    badge: "BESTSELLER",
+  },
+  {
+    id: 11,
+    name: "Dhakai Jamdani Saree",
+    price: 900,
+    image: "/images/dhakai-jamdani.jpeg",
+    badge: "",
+  },
+  {
+    id: 12,
+    name: "Pure Chanderi Cotton Indigo Saree",
+    price: 1000,
+    image: "/images/pure-chanderi-cotton-indigo-saree.jpeg",
+    badge: "",
+  },
 ];
 
 // export const SILK_SAREES = [
