@@ -83,6 +83,34 @@ export const MOCK_PRODUCTS = [
     image: "/images/pure-chanderi-cotton-indigo-saree.jpeg",
     badge: "",
   },
+  {
+    id: 13,
+    name: "Benarasi Khaddi Saree",
+    price: 2350,
+    image: "/images/benarasi-khaddi.jpeg",
+    badge: "",
+  },
+  {
+    id: 14,
+    name: "Handblock Print Maheswari Silk Saree",
+    price: 2350,
+    image: "/images/handblock-print-maheswari-silk.jpeg",
+    badge: "",
+  },
+  {
+    id: 15,
+    name: "Semi Kanjivaram Saree",
+    price: 2350,
+    image: "/images/semi-kanjivaram.jpeg",
+    badge: "",
+  },
+  {
+    id: 16,
+    name: "Soft Silk Saree",
+    price: 1850,
+    image: "/images/soft-silk.jpeg",
+    badge: "",
+  },
 ];
 
 // export const SILK_SAREES = [
