@@ -171,5 +171,5 @@ Add your project screenshots here.
 
 ## 👨‍💻 Developed By
 
-Subham Saha
+Subham Ozil Saha
 Frontend Engineer | React.js Developer
