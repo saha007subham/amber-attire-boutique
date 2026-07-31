@@ -1,4 +1,4 @@
-# Amber Attiire 👗
+# Amber Attiire Boutique 👗
 
 A modern luxury saree e-commerce website built with React.js and Tailwind CSS, featuring dynamic product management using Google Sheets integration.
 
