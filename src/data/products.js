@@ -111,6 +111,13 @@ export const MOCK_PRODUCTS = [
     image: "/images/soft-silk.jpeg",
     badge: "",
   },
+  {
+    id: 17,
+    name: "Handloom Needle Work Cotton Khadi Saree",
+    price: 2250,
+    image: "/images/handloom-needlework-cotton-khadi.jpeg",
+    badge: "",
+  },
 ];
 
 // export const SILK_SAREES = [
