@@ -191,7 +191,7 @@ export const MOCK_PRODUCTS = [
   {
     id: 28,
     name: "Khadi Crepe Georgette Saree",
-    price: 2300,
+    price: 2550,
     image: "/images/khaddi-crepe-georgette.jpeg",
     badge: "",
   },
