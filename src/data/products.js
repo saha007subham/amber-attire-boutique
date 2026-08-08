@@ -188,6 +188,20 @@ export const MOCK_PRODUCTS = [
     image: "/images/maroon-paithani-silk.jpeg",
     badge: "",
   },
+  {
+    id: 28,
+    name: "Khadi Crepe Georgette Saree",
+    price: 2300,
+    image: "/images/khaddi-crepe-georgette.jpeg",
+    badge: "",
+  },
+  {
+    id: 29,
+    name: "Organza Chikankari Saree",
+    price: 2100,
+    image: "/images/organza-chikankari.jpeg",
+    badge: "",
+  },
 ];
 
 // export const SILK_SAREES = [
